@@ -29,31 +29,34 @@ public final class joinLeaveMessagesMain extends JavaPlugin implements Listener 
             if (sender instanceof Player) {
 
                 if (joinMessageChangeHasBeenActivated = true) {
-                    if (args.length > 0 && args[0].equals("red")) {
+                    if (args.length > 0 && args[0].equalsIgnoreCase("red")) {
                         ColorChatJoin = "red";
-                        player.sendMessage(ChatColor.GREEN + "Your join message colour is now RED");
-                    } else if (args.length > 0 && args[0].equals("yellow")) {
+                        player.sendMessage(ChatColor.GREEN + "Your join message colour is now" + ChatColor.RED + " RED");
+                    } else if (args.length > 0 && args[0].equalsIgnoreCase("yellow")) {
                         ColorChatJoin = "yellow";
-                        player.sendMessage(ChatColor.GREEN + "Your join message colour is now YELLOW");
-                    } else if (args.length > 0 && args[0].equals("green")) {
+                        player.sendMessage(ChatColor.GREEN + "Your join message colour is now"+ ChatColor.YELLOW + " YELLOW");
+                    } else if (args.length > 0 && args[0].equalsIgnoreCase("green")) {
                         ColorChatJoin = "green";
-                        player.sendMessage(ChatColor.GREEN + "Your join message colour is now GREEN");
-                    } else if (args.length > 0 && args[0].equals("darkGreen")) {
+                        player.sendMessage(ChatColor.GREEN + "Your join message colour is now" + ChatColor.GREEN + " GREEN");
+                    } else if (args.length > 0 && args[0].equalsIgnoreCase("darkGreen")) {
                         ColorChatJoin = "darkGreen";
-                        player.sendMessage(ChatColor.GREEN + "Your join message colour is now DARK GREEN");
-                    } else if (args.length > 0 && args[0].equals("blue")) {
+                        player.sendMessage(ChatColor.GREEN + "Your join message colour is now" + ChatColor.DARK_GREEN + " DARK GREEN");
+                    } else if (args.length > 0 && args[0].equalsIgnoreCase("blue")) {
                         ColorChatJoin = "blue";
-                        player.sendMessage(ChatColor.GREEN + "Your join message colour is now BLUE");
-                    } else if (args.length > 0 && args[0].equals("purple")) {
+                        player.sendMessage(ChatColor.GREEN + "Your join message colour is now" + ChatColor.BLUE + " BLUE");
+                    } else if (args.length > 0 && args[0].equalsIgnoreCase("purple")) {
                         ColorChatJoin = "purple";
-                        player.sendMessage(ChatColor.GREEN + "Your join message colour is now PURPLE");
-                    } else if (args.length > 0 && args[0].equals("black")) {
+                        player.sendMessage(ChatColor.GREEN + "Your join message colour is now" + ChatColor.LIGHT_PURPLE + " PURPLE");
+                    } else if (args.length > 0 && args[0].equalsIgnoreCase("darkPurple")) {
+                        ColorChatJoin = "darkPurple";
+                        player.sendMessage(ChatColor.GREEN + "Your join message colour is now" + ChatColor.DARK_PURPLE + " DARK PURPLE");
+                    } else if (args.length > 0 && args[0].equalsIgnoreCase("black")) {
                         ColorChatJoin = "black";
-                        player.sendMessage(ChatColor.GREEN + "Your join message colour is now BLACK");
-                    } else if (args.length > 0 && args[0].equals("white")) {
+                        player.sendMessage(ChatColor.GREEN + "Your join message colour is now" + ChatColor.BLACK + " BLACK");
+                    } else if (args.length > 0 && args[0].equalsIgnoreCase("white")) {
                         ColorChatJoin = "white";
-                        player.sendMessage(ChatColor.GREEN + "Your join message colour is now WHITE");
-                    } else if (args.length > 0 && args[0].equals("default")) {
+                        player.sendMessage(ChatColor.GREEN + "Your join message colour is now" + ChatColor.WHITE + " WHITE");
+                    } else if (args.length > 0 && args[0].equalsIgnoreCase("default")) {
                         ColorChatJoin = "default";
                         player.sendMessage(ChatColor.GREEN + "Your join message colour has returned to normal");
                     } else {
@@ -62,36 +65,39 @@ public final class joinLeaveMessagesMain extends JavaPlugin implements Listener 
                     }
                 } else if (joinMessageChangeHasBeenActivated = false) {
                     joinMessageChangeHasBeenActivated = true;
-                    if (args.length > 0 && args[0].equals("red")) {
+                    if (args.length > 0 && args[0].equalsIgnoreCase("red")) {
                         ColorChatJoin = "red";
-                        player.sendMessage(ChatColor.GREEN + "Your join message colour is now RED");
-                    } else if (args.length > 0 && args[0].equals("yellow")) {
+                        player.sendMessage(ChatColor.GREEN + "Your join message colour is now" + ChatColor.RED + " RED");
+                    } else if (args.length > 0 && args[0].equalsIgnoreCase("yellow")) {
                         ColorChatJoin = "yellow";
-                        player.sendMessage(ChatColor.GREEN + "Your join message colour is now YELLOW");
-                    } else if (args.length > 0 && args[0].equals("green")) {
+                        player.sendMessage(ChatColor.GREEN + "Your join message colour is now"+ ChatColor.YELLOW + " YELLOW");
+                    } else if (args.length > 0 && args[0].equalsIgnoreCase("green")) {
                         ColorChatJoin = "green";
-                        player.sendMessage(ChatColor.GREEN + "Your join message colour is now GREEN");
-                    } else if (args.length > 0 && args[0].equals("darkGreen")) {
+                        player.sendMessage(ChatColor.GREEN + "Your join message colour is now" + ChatColor.GREEN + " GREEN");
+                    } else if (args.length > 0 && args[0].equalsIgnoreCase("darkGreen")) {
                         ColorChatJoin = "darkGreen";
-                        player.sendMessage(ChatColor.GREEN + "Your join message colour is now DARK GREEN");
-                    } else if (args.length > 0 && args[0].equals("blue")) {
+                        player.sendMessage(ChatColor.GREEN + "Your join message colour is now" + ChatColor.DARK_GREEN + " DARK GREEN");
+                    } else if (args.length > 0 && args[0].equalsIgnoreCase("blue")) {
                         ColorChatJoin = "blue";
-                        player.sendMessage(ChatColor.GREEN + "Your join message colour is now BLUE");
-                    } else if (args.length > 0 && args[0].equals("purple")) {
+                        player.sendMessage(ChatColor.GREEN + "Your join message colour is now" + ChatColor.BLUE + " BLUE");
+                    } else if (args.length > 0 && args[0].equalsIgnoreCase("purple")) {
                         ColorChatJoin = "purple";
-                        player.sendMessage(ChatColor.GREEN + "Your join message colour is now PURPLE");
-                    } else if (args.length > 0 && args[0].equals("black")) {
+                        player.sendMessage(ChatColor.GREEN + "Your join message colour is now" + ChatColor.LIGHT_PURPLE + " PURPLE");
+                    } else if (args.length > 0 && args[0].equalsIgnoreCase("darkPurple")) {
+                        ColorChatJoin = "darkPurple";
+                        player.sendMessage(ChatColor.GREEN + "Your join message colour is now" + ChatColor.DARK_PURPLE + " DARK PURPLE");
+                    } else if (args.length > 0 && args[0].equalsIgnoreCase("black")) {
                         ColorChatJoin = "black";
-                        player.sendMessage(ChatColor.GREEN + "Your join message colour is now BLACK");
-                    } else if (args.length > 0 && args[0].equals("white")) {
+                        player.sendMessage(ChatColor.GREEN + "Your join message colour is now" + ChatColor.BLACK + " BLACK");
+                    } else if (args.length > 0 && args[0].equalsIgnoreCase("white")) {
                         ColorChatJoin = "white";
-                        player.sendMessage(ChatColor.GREEN + "Your join message colour is now WHITE");
-                    } else if (args.length > 0 && args[0].equals("default")) {
+                        player.sendMessage(ChatColor.GREEN + "Your join message colour is now" + ChatColor.WHITE + " WHITE");
+                    } else if (args.length > 0 && args[0].equalsIgnoreCase("default")) {
                         ColorChatJoin = "default";
                         player.sendMessage(ChatColor.GREEN + "Your join message colour has returned to normal");
                     } else {
                         player.sendMessage(ChatColor.RED + "You must give the command a valid argument");
-                        player.sendMessage(ChatColor.RED + "/joinMessageColour <Colour>");
+                        player.sendMessage(ChatColor.RED + "/joinMessageColour <colour>");
                     }
                 }
             }
@@ -99,31 +105,34 @@ public final class joinLeaveMessagesMain extends JavaPlugin implements Listener 
             if (sender instanceof Player){
 
                 if (leaveMessageChangeHasBeenActivated = true){
-                    if(args.length > 0 && args[0].equals("red")) {
+                    if(args.length > 0 && args[0].equalsIgnoreCase("red")) {
                         ColorChatLeave = "red";
-                        player.sendMessage(ChatColor.GREEN + "Your leave message colour is now RED");
-                    }else if(args.length > 0 && args[0].equals("yellow")){
+                        player.sendMessage(ChatColor.GREEN + "Your leave message colour is now" + ChatColor.RED + " RED");
+                    }else if(args.length > 0 && args[0].equalsIgnoreCase("yellow")){
                         ColorChatLeave = "yellow";
-                        player.sendMessage(ChatColor.GREEN + "Your leave message colour is now YELLOW");
-                    }else if(args.length > 0 && args[0].equals("green")){
+                        player.sendMessage(ChatColor.GREEN + "Your leave message colour is now"+ ChatColor.YELLOW + " YELLOW");
+                    }else if(args.length > 0 && args[0].equalsIgnoreCase("green")){
                         ColorChatLeave = "green";
-                        player.sendMessage(ChatColor.GREEN + "Your leave message colour is now GREEN");
-                    }else if(args.length > 0 && args[0].equals("darkGreen")){
+                        player.sendMessage(ChatColor.GREEN + "Your leave message colour is now" + ChatColor.GREEN + " GREEN");
+                    }else if(args.length > 0 && args[0].equalsIgnoreCase("darkGreen")){
                         ColorChatLeave = "darkGreen";
-                        player.sendMessage(ChatColor.GREEN + "Your leave message colour is now DARK GREEN");
-                    }else if(args.length > 0 && args[0].equals("blue")){
+                        player.sendMessage(ChatColor.GREEN + "Your leave message colour is now" + ChatColor.DARK_GREEN + " DARK GREEN");
+                    }else if(args.length > 0 && args[0].equalsIgnoreCase("blue")){
                         ColorChatLeave = "blue";
-                        player.sendMessage(ChatColor.GREEN + "Your leave message colour is now BLUE");
-                    }else if(args.length > 0 && args[0].equals("purple")){
+                        player.sendMessage(ChatColor.GREEN + "Your leave message colour is now" + ChatColor.BLUE + " BLUE");
+                    }else if(args.length > 0 && args[0].equalsIgnoreCase("purple")){
                         ColorChatLeave = "purple";
-                        player.sendMessage(ChatColor.GREEN + "Your leave message colour is now PURPLE");
-                    }else if(args.length > 0 && args[0].equals("black")){
+                        player.sendMessage(ChatColor.GREEN + "Your leave message colour is now" + ChatColor.LIGHT_PURPLE + " PURPLE");
+                    } else if (args.length > 0 && args[0].equalsIgnoreCase("darkPurple")) {
+                        ColorChatJoin = "darkPurple";
+                        player.sendMessage(ChatColor.GREEN + "Your join message colour is now" + ChatColor.DARK_PURPLE + " DARK PURPLE");
+                    }else if(args.length > 0 && args[0].equalsIgnoreCase("black")){
                         ColorChatLeave = "black";
-                        player.sendMessage(ChatColor.GREEN + "Your leave message colour is now BLACK");
-                    }else if(args.length > 0 && args[0].equals("white")){
+                        player.sendMessage(ChatColor.GREEN + "Your leave message colour is now" + ChatColor.BLACK + " BLACK");
+                    }else if(args.length > 0 && args[0].equalsIgnoreCase("white")){
                         ColorChatLeave = "white";
-                        player.sendMessage(ChatColor.GREEN + "Your leave message colour is now WHITE");
-                    }else if(args.length > 0 && args[0].equals("default")){
+                        player.sendMessage(ChatColor.GREEN + "Your leave message colour is now" + ChatColor.WHITE + " WHITE");
+                    }else if(args.length > 0 && args[0].equalsIgnoreCase("default")){
                         ColorChatLeave = "default";
                         player.sendMessage(ChatColor.GREEN + "Your leave message colour has returned to normal");
                     }else{
@@ -133,36 +142,194 @@ public final class joinLeaveMessagesMain extends JavaPlugin implements Listener 
                     }
                 }else if(leaveMessageChangeHasBeenActivated = false){
                     leaveMessageChangeHasBeenActivated = true;
-                    if(args.length > 0 && args[0].equals("red")) {
+                    if(args.length > 0 && args[0].equalsIgnoreCase("red")) {
                         ColorChatLeave = "red";
-                        player.sendMessage(ChatColor.GREEN + "Your leave message colour is now RED");
-                    }else if(args.length > 0 && args[0].equals("yellow")){
+                        player.sendMessage(ChatColor.GREEN + "Your leave message colour is now" + ChatColor.RED + " RED");
+                    }else if(args.length > 0 && args[0].equalsIgnoreCase("yellow")){
                         ColorChatLeave = "yellow";
-                        player.sendMessage(ChatColor.GREEN + "Your leave message colour is now YELLOW");
-                    }else if(args.length > 0 && args[0].equals("green")){
+                        player.sendMessage(ChatColor.GREEN + "Your leave message colour is now"+ ChatColor.YELLOW + " YELLOW");
+                    }else if(args.length > 0 && args[0].equalsIgnoreCase("green")){
                         ColorChatLeave = "green";
-                        player.sendMessage(ChatColor.GREEN + "Your leave message colour is now GREEN");
-                    }else if(args.length > 0 && args[0].equals("darkGreen")){
+                        player.sendMessage(ChatColor.GREEN + "Your leave message colour is now" + ChatColor.GREEN + " GREEN");
+                    }else if(args.length > 0 && args[0].equalsIgnoreCase("darkGreen")){
                         ColorChatLeave = "darkGreen";
-                        player.sendMessage(ChatColor.GREEN + "Your leave message colour is now DARK GREEN");
-                    }else if(args.length > 0 && args[0].equals("blue")){
+                        player.sendMessage(ChatColor.GREEN + "Your leave message colour is now" + ChatColor.DARK_GREEN + " DARK GREEN");
+                    }else if(args.length > 0 && args[0].equalsIgnoreCase("blue")){
                         ColorChatLeave = "blue";
-                        player.sendMessage(ChatColor.GREEN + "Your leave message colour is now BLUE");
-                    }else if(args.length > 0 && args[0].equals("purple")){
+                        player.sendMessage(ChatColor.GREEN + "Your leave message colour is now" + ChatColor.BLUE + " BLUE");
+                    }else if(args.length > 0 && args[0].equalsIgnoreCase("purple")){
                         ColorChatLeave = "purple";
-                        player.sendMessage(ChatColor.GREEN + "Your leave message colour is now PURPLE");
-                    }else if(args.length > 0 && args[0].equals("black")){
+                        player.sendMessage(ChatColor.GREEN + "Your leave message colour is now" + ChatColor.LIGHT_PURPLE + " PURPLE");
+                    } else if (args.length > 0 && args[0].equalsIgnoreCase("darkPurple")) {
+                        ColorChatJoin = "darkPurple";
+                        player.sendMessage(ChatColor.GREEN + "Your join message colour is now" + ChatColor.DARK_PURPLE + " DARK PURPLE");
+                    }else if(args.length > 0 && args[0].equalsIgnoreCase("black")){
                         ColorChatLeave = "black";
-                        player.sendMessage(ChatColor.GREEN + "Your leave message colour is now BLACK");
-                    }else if(args.length > 0 && args[0].equals("white")){
+                        player.sendMessage(ChatColor.GREEN + "Your leave message colour is now" + ChatColor.BLACK + " BLACK");
+                    }else if(args.length > 0 && args[0].equalsIgnoreCase("white")){
                         ColorChatLeave = "white";
-                        player.sendMessage(ChatColor.GREEN + "Your leave message colour is now WHITE");
-                    }else if(args.length > 0 && args[0].equals("default")){
+                        player.sendMessage(ChatColor.GREEN + "Your leave message colour is now" + ChatColor.WHITE + " WHITE");
+                    }else if(args.length > 0 && args[0].equalsIgnoreCase("default")){
                         ColorChatLeave = "default";
                         player.sendMessage(ChatColor.GREEN + "Your leave message colour has returned to normal");
                     }else{
                         player.sendMessage(ChatColor.RED + "You must give the command a valid argument");
                         player.sendMessage(ChatColor.RED + "/leaveMessageColour <Colour>");
+
+                    }
+                }
+
+            }
+        }else if (command.getName().equalsIgnoreCase("joinMessageColor")){
+            if (sender instanceof Player) {
+
+                if (joinMessageChangeHasBeenActivated = true) {
+                    if (args.length > 0 && args[0].equalsIgnoreCase("red")) {
+                        ColorChatJoin = "red";
+                        player.sendMessage(ChatColor.GREEN + "Your join message color is now" + ChatColor.RED + " RED");
+                    } else if (args.length > 0 && args[0].equalsIgnoreCase("yellow")) {
+                        ColorChatJoin = "yellow";
+                        player.sendMessage(ChatColor.GREEN + "Your join message color is now"+ ChatColor.YELLOW + " YELLOW");
+                    } else if (args.length > 0 && args[0].equalsIgnoreCase("green")) {
+                        ColorChatJoin = "green";
+                        player.sendMessage(ChatColor.GREEN + "Your join message color is now" + ChatColor.GREEN + " GREEN");
+                    } else if (args.length > 0 && args[0].equalsIgnoreCase("darkGreen")) {
+                        ColorChatJoin = "darkGreen";
+                        player.sendMessage(ChatColor.GREEN + "Your join message color is now" + ChatColor.DARK_GREEN + " DARK GREEN");
+                    } else if (args.length > 0 && args[0].equalsIgnoreCase("blue")) {
+                        ColorChatJoin = "blue";
+                        player.sendMessage(ChatColor.GREEN + "Your join message color is now" + ChatColor.BLUE + " BLUE");
+                    } else if (args.length > 0 && args[0].equalsIgnoreCase("purple")) {
+                        ColorChatJoin = "purple";
+                        player.sendMessage(ChatColor.GREEN + "Your join message color is now" + ChatColor.LIGHT_PURPLE + " PURPLE");
+                    } else if (args.length > 0 && args[0].equalsIgnoreCase("darkPurple")) {
+                        ColorChatJoin = "darkPurple";
+                        player.sendMessage(ChatColor.GREEN + "Your join message color is now" + ChatColor.DARK_PURPLE + " DARK PURPLE");
+                    } else if (args.length > 0 && args[0].equalsIgnoreCase("black")) {
+                        ColorChatJoin = "black";
+                        player.sendMessage(ChatColor.GREEN + "Your join message color is now" + ChatColor.BLACK + " BLACK");
+                    } else if (args.length > 0 && args[0].equalsIgnoreCase("white")) {
+                        ColorChatJoin = "white";
+                        player.sendMessage(ChatColor.GREEN + "Your join message color is now" + ChatColor.WHITE + " WHITE");
+                    } else if (args.length > 0 && args[0].equalsIgnoreCase("default")) {
+                        ColorChatJoin = "default";
+                        player.sendMessage(ChatColor.GREEN + "Your join message color has returned to normal");
+                    } else {
+                        player.sendMessage(ChatColor.RED + "You must give the command a valid argument");
+                        player.sendMessage(ChatColor.RED + "/joinMessageColor <color>");
+                    }
+                } else if (joinMessageChangeHasBeenActivated = false) {
+                    joinMessageChangeHasBeenActivated = true;
+                    if (args.length > 0 && args[0].equalsIgnoreCase("red")) {
+                        ColorChatJoin = "red";
+                        player.sendMessage(ChatColor.GREEN + "Your join message color is now" + ChatColor.RED + " RED");
+                    } else if (args.length > 0 && args[0].equalsIgnoreCase("yellow")) {
+                        ColorChatJoin = "yellow";
+                        player.sendMessage(ChatColor.GREEN + "Your join message color is now"+ ChatColor.YELLOW + " YELLOW");
+                    } else if (args.length > 0 && args[0].equalsIgnoreCase("green")) {
+                        ColorChatJoin = "green";
+                        player.sendMessage(ChatColor.GREEN + "Your join message color is now" + ChatColor.GREEN + " GREEN");
+                    } else if (args.length > 0 && args[0].equalsIgnoreCase("darkGreen")) {
+                        ColorChatJoin = "darkGreen";
+                        player.sendMessage(ChatColor.GREEN + "Your join message color is now" + ChatColor.DARK_GREEN + " DARK GREEN");
+                    } else if (args.length > 0 && args[0].equalsIgnoreCase("blue")) {
+                        ColorChatJoin = "blue";
+                        player.sendMessage(ChatColor.GREEN + "Your join message color is now" + ChatColor.BLUE + " BLUE");
+                    } else if (args.length > 0 && args[0].equalsIgnoreCase("purple")) {
+                        ColorChatJoin = "purple";
+                        player.sendMessage(ChatColor.GREEN + "Your join message color is now" + ChatColor.LIGHT_PURPLE + " PURPLE");
+                    } else if (args.length > 0 && args[0].equalsIgnoreCase("darkPurple")) {
+                        ColorChatJoin = "darkPurple";
+                        player.sendMessage(ChatColor.GREEN + "Your join message color is now" + ChatColor.DARK_PURPLE + " DARK PURPLE");
+                    } else if (args.length > 0 && args[0].equalsIgnoreCase("black")) {
+                        ColorChatJoin = "black";
+                        player.sendMessage(ChatColor.GREEN + "Your join message color is now" + ChatColor.BLACK + " BLACK");
+                    } else if (args.length > 0 && args[0].equalsIgnoreCase("white")) {
+                        ColorChatJoin = "white";
+                        player.sendMessage(ChatColor.GREEN + "Your join message color is now" + ChatColor.WHITE + " WHITE");
+                    } else if (args.length > 0 && args[0].equalsIgnoreCase("default")) {
+                        ColorChatJoin = "default";
+                        player.sendMessage(ChatColor.GREEN + "Your join message color has returned to normal");
+                    } else {
+                        player.sendMessage(ChatColor.RED + "You must give the command a valid argument");
+                        player.sendMessage(ChatColor.RED + "/joinMessageColor <color>");
+                    }
+                }
+            }
+        }else if (command.getName().equalsIgnoreCase("leaveMessageColor")){
+            if (sender instanceof Player){
+
+                if (leaveMessageChangeHasBeenActivated = true){
+                    if(args.length > 0 && args[0].equalsIgnoreCase("red")) {
+                        ColorChatLeave = "red";
+                        player.sendMessage(ChatColor.GREEN + "Your leave message color is now" + ChatColor.RED + " RED");
+                    }else if(args.length > 0 && args[0].equalsIgnoreCase("yellow")){
+                        ColorChatLeave = "yellow";
+                        player.sendMessage(ChatColor.GREEN + "Your leave message color is now"+ ChatColor.YELLOW + " YELLOW");
+                    }else if(args.length > 0 && args[0].equalsIgnoreCase("green")){
+                        ColorChatLeave = "green";
+                        player.sendMessage(ChatColor.GREEN + "Your leave message color is now" + ChatColor.GREEN + " GREEN");
+                    }else if(args.length > 0 && args[0].equalsIgnoreCase("darkGreen")){
+                        ColorChatLeave = "darkGreen";
+                        player.sendMessage(ChatColor.GREEN + "Your leave message color is now" + ChatColor.DARK_GREEN + " DARK GREEN");
+                    }else if(args.length > 0 && args[0].equalsIgnoreCase("blue")){
+                        ColorChatLeave = "blue";
+                        player.sendMessage(ChatColor.GREEN + "Your leave message color is now" + ChatColor.BLUE + " BLUE");
+                    }else if(args.length > 0 && args[0].equalsIgnoreCase("purple")){
+                        ColorChatLeave = "purple";
+                        player.sendMessage(ChatColor.GREEN + "Your leave message color is now" + ChatColor.LIGHT_PURPLE + " PURPLE");
+                    } else if (args.length > 0 && args[0].equalsIgnoreCase("darkPurple")) {
+                        ColorChatJoin = "darkPurple";
+                        player.sendMessage(ChatColor.GREEN + "Your join message color is now" + ChatColor.DARK_PURPLE + " DARK PURPLE");
+                    }else if(args.length > 0 && args[0].equalsIgnoreCase("black")){
+                        ColorChatLeave = "black";
+                        player.sendMessage(ChatColor.GREEN + "Your leave message color is now" + ChatColor.BLACK + " BLACK");
+                    }else if(args.length > 0 && args[0].equalsIgnoreCase("white")){
+                        ColorChatLeave = "white";
+                        player.sendMessage(ChatColor.GREEN + "Your leave message color is now" + ChatColor.WHITE + " WHITE");
+                    }else if(args.length > 0 && args[0].equalsIgnoreCase("default")){
+                        ColorChatLeave = "default";
+                        player.sendMessage(ChatColor.GREEN + "Your leave message color has returned to normal");
+                    }else{
+                        player.sendMessage(ChatColor.RED + "You must give the command a valid argument");
+                        player.sendMessage(ChatColor.RED + "/leaveMessageColor <color>");
+
+                    }
+                }else if(leaveMessageChangeHasBeenActivated = false){
+                    leaveMessageChangeHasBeenActivated = true;
+                    if(args.length > 0 && args[0].equalsIgnoreCase("red")) {
+                        ColorChatLeave = "red";
+                        player.sendMessage(ChatColor.GREEN + "Your leave message color is now" + ChatColor.RED + " RED");
+                    }else if(args.length > 0 && args[0].equalsIgnoreCase("yellow")){
+                        ColorChatLeave = "yellow";
+                        player.sendMessage(ChatColor.GREEN + "Your leave message color is now"+ ChatColor.YELLOW + " YELLOW");
+                    }else if(args.length > 0 && args[0].equalsIgnoreCase("green")){
+                        ColorChatLeave = "green";
+                        player.sendMessage(ChatColor.GREEN + "Your leave message color is now" + ChatColor.GREEN + " GREEN");
+                    }else if(args.length > 0 && args[0].equalsIgnoreCase("darkGreen")){
+                        ColorChatLeave = "darkGreen";
+                        player.sendMessage(ChatColor.GREEN + "Your leave message color is now" + ChatColor.DARK_GREEN + " DARK GREEN");
+                    }else if(args.length > 0 && args[0].equalsIgnoreCase("blue")){
+                        ColorChatLeave = "blue";
+                        player.sendMessage(ChatColor.GREEN + "Your leave message color is now" + ChatColor.BLUE + " BLUE");
+                    }else if(args.length > 0 && args[0].equalsIgnoreCase("purple")){
+                        ColorChatLeave = "purple";
+                        player.sendMessage(ChatColor.GREEN + "Your leave message color is now" + ChatColor.LIGHT_PURPLE + " PURPLE");
+                    } else if (args.length > 0 && args[0].equalsIgnoreCase("darkPurple")) {
+                        ColorChatJoin = "darkPurple";
+                        player.sendMessage(ChatColor.GREEN + "Your join message color is now" + ChatColor.DARK_PURPLE + " DARK PURPLE");
+                    }else if(args.length > 0 && args[0].equalsIgnoreCase("black")){
+                        ColorChatLeave = "black";
+                        player.sendMessage(ChatColor.GREEN + "Your leave message color is now" + ChatColor.BLACK + " BLACK");
+                    }else if(args.length > 0 && args[0].equalsIgnoreCase("white")){
+                        ColorChatLeave = "white";
+                        player.sendMessage(ChatColor.GREEN + "Your leave message color is now" + ChatColor.WHITE + " WHITE");
+                    }else if(args.length > 0 && args[0].equalsIgnoreCase("default")){
+                        ColorChatLeave = "default";
+                        player.sendMessage(ChatColor.GREEN + "Your leave message color has returned to normal");
+                    }else{
+                        player.sendMessage(ChatColor.RED + "You must give the command a valid argument");
+                        player.sendMessage(ChatColor.RED + "/leaveMessageColor <color>");
 
                     }
                 }
@@ -225,6 +392,12 @@ public final class joinLeaveMessagesMain extends JavaPlugin implements Listener 
                 }else{
                     e.setJoinMessage(ChatColor.LIGHT_PURPLE + "" + ChatColor.YELLOW + ChatColor.BOLD + player.getDisplayName() + ", " + ChatColor.LIGHT_PURPLE + "welcome to the best server ever. I hope you like it.");
                 }
+            }else if (ColorChatJoin == "darkPurple") {
+                if (player.hasPlayedBefore()){
+                    e.setJoinMessage(ChatColor.DARK_PURPLE + "Welcome back to the server " + ChatColor.YELLOW + player.getDisplayName() + ChatColor.DARK_PURPLE + "!!! We missed you.");
+                }else{
+                    e.setJoinMessage(ChatColor.DARK_PURPLE + "" + ChatColor.YELLOW + ChatColor.BOLD + player.getDisplayName() + ", " + ChatColor.DARK_PURPLE + "welcome to the best server ever. I hope you like it.");
+                }
             }else if (ColorChatJoin == "black") {
                 if (player.hasPlayedBefore()){
                     e.setJoinMessage(ChatColor.BLACK + "Welcome back to the server " + ChatColor.YELLOW + player.getDisplayName() + ChatColor.BLACK + "!!! We missed you.");
@@ -258,10 +431,8 @@ public final class joinLeaveMessagesMain extends JavaPlugin implements Listener 
 
         Player player = e.getPlayer();
 
-        e.setQuitMessage(ChatColor.YELLOW + player.getDisplayName() + ChatColor.RED + " has left the server o/");
-
-        if (leaveMessageChangeHasBeenActivated=true){
-            e.setQuitMessage(ChatColor.YELLOW + player.getDisplayName() + ChatColor.GREEN + " has left the server o/");
+        if (leaveMessageChangeHasBeenActivated=false){
+            e.setQuitMessage(ChatColor.YELLOW + player.getDisplayName() + ChatColor.RED + " has left the server o/");
         }else if(leaveMessageChangeHasBeenActivated=true){
             if (ColorChatLeave == "red") {
                 e.setQuitMessage(ChatColor.YELLOW + player.getDisplayName() + ChatColor.RED + " has left the server o/");
@@ -275,6 +446,8 @@ public final class joinLeaveMessagesMain extends JavaPlugin implements Listener 
                 e.setQuitMessage(ChatColor.YELLOW + player.getDisplayName() + ChatColor.BLUE + " has left the server o/");
             }else if (ColorChatLeave == "purple") {
                 e.setQuitMessage(ChatColor.YELLOW + player.getDisplayName() + ChatColor.LIGHT_PURPLE + " has left the server o/");
+            }else if (ColorChatLeave == "darkPurple") {
+                e.setQuitMessage(ChatColor.YELLOW + player.getDisplayName() + ChatColor.DARK_PURPLE + " has left the server o/");
             }else if (ColorChatLeave == "black") {
                 e.setQuitMessage(ChatColor.YELLOW + player.getDisplayName() + ChatColor.BLACK + " has left the server o/");
             }else if (ColorChatLeave == "white") {
@@ -294,6 +467,8 @@ public final class joinLeaveMessagesMain extends JavaPlugin implements Listener 
 
         getCommand("joinMessageColour").setExecutor(this);
         getCommand("leaveMessageColour").setExecutor(this);
+        getCommand("joinMessageColor").setExecutor(this);
+        getCommand("leaveMessageColor").setExecutor(this);
 
         getServer().getPluginManager().registerEvents(this, this);
 
