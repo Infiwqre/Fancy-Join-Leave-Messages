@@ -1,5 +1,5 @@
 name: CustomizableFancyChat
-version: 0.3
+version: 0.4
 main: me.infiware.customizablefancychat.joinLeaveMessagesMain
 api-version: 1.17
 authors: [ Infiware ]
@@ -7,9 +7,9 @@ description: Changes all chat messages to a text colour desired by the player
 commands:
   joinMessageColour:
     description: changes the colour of text on your join message for joining the server
-    aliases: [ joinMessageColor, jmc ]
+    aliases: [ joinmessagecolor, jmc ]
     usage: /<command> [red/yellow/green/darkgreen/blue/aqua/purple/darkpurple/black/white/default]
   leaveMessageColour:
     description: changes the colour of text on your leave message for leaving the server
-    aliases: [ leaveMessageColor, lmc ]
+    aliases: [ leavemessagecolor, lmc ]
     usage: /<command> [red/yellow/green/darkgreen/blue/aqua/purple/darkpurple/black/white/default]
