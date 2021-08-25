@@ -1,5 +1,5 @@
 name: CustomizableFancyChat
-version: 0.4
+version: 0.5
 main: me.infiware.customizablefancychat.joinLeaveMessagesMain
 api-version: 1.17
 authors: [ Infiware ]
