@@ -1,0 +1,12 @@
+joinMessageText1: 'Welcome back to the server '
+joinMessageText2: '!!! We missed you.'
+# these 2 variables in the join message text are ordered like (joinMessageText1 + username + joinMessageText2)
+
+leaveMessageText1: ' has left the server o/'
+# this variable is ordered like (username + leaveMessageText1)
+
+allowPlayerljmcChange: 1
+# this variable allows any player to change the colour of their leave/join messages
+# 1 = true, 2 = false, anything else = true
+
+# Note: you must reset the plugin in order for changes to config.yml to be in effect
