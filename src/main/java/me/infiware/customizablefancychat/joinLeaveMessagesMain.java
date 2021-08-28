@@ -230,7 +230,7 @@ public final class joinLeaveMessagesMain extends JavaPlugin implements Listener 
                             ColorChatLeave = "purple";
                             p.sendMessage(ChatColor.GREEN + "Your leave message colour is now" + ChatColor.LIGHT_PURPLE + " PURPLE");
                         } else if (args.length > 0 && args[0].equalsIgnoreCase("darkPurple")) {
-                            ColorChatJoin = "darkPurple";
+                            ColorChatLeave = "darkPurple";
                             p.sendMessage(ChatColor.GREEN + "Your leave message colour is now" + ChatColor.DARK_PURPLE + " DARK PURPLE");
                         }else if(args.length > 0 && args[0].equalsIgnoreCase("black")){
                             ColorChatLeave = "black";
@@ -272,7 +272,7 @@ public final class joinLeaveMessagesMain extends JavaPlugin implements Listener 
                             ColorChatLeave = "purple";
                             p.sendMessage(ChatColor.GREEN + "Your leave message colour is now" + ChatColor.LIGHT_PURPLE + " PURPLE");
                         } else if (args.length > 0 && args[0].equalsIgnoreCase("darkPurple")) {
-                            ColorChatJoin = "darkPurple";
+                            ColorChatLeave = "darkPurple";
                             p.sendMessage(ChatColor.GREEN + "Your leave message colour is now" + ChatColor.DARK_PURPLE + " DARK PURPLE");
                         }else if(args.length > 0 && args[0].equalsIgnoreCase("black")){
                             ColorChatLeave = "black";
@@ -315,7 +315,7 @@ public final class joinLeaveMessagesMain extends JavaPlugin implements Listener 
                             ColorChatLeave = "purple";
                             p.sendMessage(ChatColor.GREEN + "Your leave message colour is now" + ChatColor.LIGHT_PURPLE + " PURPLE");
                         } else if (args.length > 0 && args[0].equalsIgnoreCase("darkPurple")) {
-                            ColorChatJoin = "darkPurple";
+                            ColorChatLeave = "darkPurple";
                             p.sendMessage(ChatColor.GREEN + "Your leave message colour is now" + ChatColor.DARK_PURPLE + " DARK PURPLE");
                         }else if(args.length > 0 && args[0].equalsIgnoreCase("black")){
                             ColorChatLeave = "black";
@@ -358,7 +358,7 @@ public final class joinLeaveMessagesMain extends JavaPlugin implements Listener 
                             ColorChatLeave = "purple";
                             p.sendMessage(ChatColor.GREEN + "Your leave message colour is now" + ChatColor.LIGHT_PURPLE + " PURPLE");
                         } else if (args.length > 0 && args[0].equalsIgnoreCase("darkPurple")) {
-                            ColorChatJoin = "darkPurple";
+                            ColorChatLeave = "darkPurple";
                             p.sendMessage(ChatColor.GREEN + "Your leave message colour is now" + ChatColor.DARK_PURPLE + " DARK PURPLE");
                         }else if(args.length > 0 && args[0].equalsIgnoreCase("black")){
                             ColorChatLeave = "black";
@@ -395,6 +395,9 @@ public final class joinLeaveMessagesMain extends JavaPlugin implements Listener 
         Player p = e.getPlayer();
         String joinMessageText1 = getConfig().getString("joinMessageText1");
         String joinMessageText2 = getConfig().getString("joinMessageText2");
+        String joinMessageTextNew1 = getConfig().getString("joinMessageTextNew1");
+        
+        String defaultJoinMessageColour = getConfig().getString("defaultjoinMessageColour");
         
         
         if (joinMessageChangeHasBeenActivated=false){
@@ -403,7 +406,74 @@ public final class joinLeaveMessagesMain extends JavaPlugin implements Listener 
                 // if statement to send a different join/leave message if you have never played in "" server
                 e.setJoinMessage(ChatColor.GREEN + joinMessageText1 + ChatColor.YELLOW + p.getDisplayName() + ChatColor.GREEN + joinMessageText2);
             }else{
-                e.setJoinMessage(ChatColor.BLUE + "" + ChatColor.BOLD + p.getDisplayName() + ", " + ChatColor.BLUE + "welcome to the best server ever. I hope you like it.");
+                if (defaultJoinMessageColour == "red") {
+                    if (p.hasPlayedBefore()){
+                        // if statement to send a different join/leave message if you have never played in "" server
+                        e.setJoinMessage(ChatColor.RED + joinMessageText1 + ChatColor.YELLOW + p.getDisplayName() + ChatColor.RED + joinMessageText2);
+                    }else{
+                        e.setJoinMessage(ChatColor.RED + "" + ChatColor.YELLOW + ChatColor.BOLD + p.getDisplayName() + ", " + ChatColor.RED + joinMessageTextNew1);
+                    }
+                }else if (defaultJoinMessageColour == "yellow") {
+                    if (p.hasPlayedBefore()){
+                        e.setJoinMessage(ChatColor.YELLOW + joinMessageText1 + ChatColor.YELLOW + p.getDisplayName() + ChatColor.YELLOW + joinMessageText2);
+                    }else{
+                        e.setJoinMessage(ChatColor.YELLOW + "" + ChatColor.YELLOW + ChatColor.BOLD + p.getDisplayName() + ", " + ChatColor.YELLOW + joinMessageTextNew1);
+                    }
+                }else if (defaultJoinMessageColour == "green") {
+                    if (p.hasPlayedBefore()){
+                        e.setJoinMessage(ChatColor.GREEN + joinMessageText1 + ChatColor.YELLOW + p.getDisplayName() + ChatColor.GREEN + joinMessageText2);
+                    }else{
+                        e.setJoinMessage(ChatColor.GREEN + "" + ChatColor.YELLOW + ChatColor.BOLD + p.getDisplayName() + ", " + ChatColor.GREEN + joinMessageTextNew1);
+                    }
+                }else if (defaultJoinMessageColour == "darkGreen") {
+                    if (p.hasPlayedBefore()){
+                        e.setJoinMessage(ChatColor.DARK_GREEN + joinMessageText1 + ChatColor.YELLOW + p.getDisplayName() + ChatColor.DARK_GREEN + joinMessageText2);
+                    }else{
+                        e.setJoinMessage(ChatColor.DARK_GREEN + "" + ChatColor.YELLOW + ChatColor.BOLD + p.getDisplayName() + ", " + ChatColor.DARK_GREEN + joinMessageTextNew1);
+                    }
+                }else if (defaultJoinMessageColour == "blue") {
+                    if (p.hasPlayedBefore()){
+                        e.setJoinMessage(ChatColor.BLUE + joinMessageText1 + ChatColor.YELLOW + p.getDisplayName() + ChatColor.BLUE + joinMessageText2);
+                    }else{
+                        e.setJoinMessage(ChatColor.BLUE + "" + ChatColor.YELLOW + ChatColor.BOLD + p.getDisplayName() + ", " + ChatColor.BLUE + joinMessageTextNew1);
+                    }
+                }else if (defaultJoinMessageColour == "purple") {
+                    if (p.hasPlayedBefore()){
+                        e.setJoinMessage(ChatColor.LIGHT_PURPLE + joinMessageText1 + ChatColor.YELLOW + p.getDisplayName() + ChatColor.LIGHT_PURPLE + joinMessageText2);
+                    }else{
+                        e.setJoinMessage(ChatColor.LIGHT_PURPLE + "" + ChatColor.YELLOW + ChatColor.BOLD + p.getDisplayName() + ", " + ChatColor.LIGHT_PURPLE + joinMessageTextNew1);
+                    }
+                }else if (defaultJoinMessageColour == "darkPurple") {
+                    if (p.hasPlayedBefore()){
+                        e.setJoinMessage(ChatColor.DARK_PURPLE + joinMessageText1 + ChatColor.YELLOW + p.getDisplayName() + ChatColor.DARK_PURPLE + joinMessageText2);
+                    }else{
+                        e.setJoinMessage(ChatColor.DARK_PURPLE + "" + ChatColor.YELLOW + ChatColor.BOLD + p.getDisplayName() + ", " + ChatColor.DARK_PURPLE + joinMessageTextNew1);
+                    }
+                }else if (defaultJoinMessageColour == "black") {
+                    if (p.hasPlayedBefore()){
+                        e.setJoinMessage(ChatColor.BLACK + joinMessageText1 + ChatColor.YELLOW + p.getDisplayName() + ChatColor.BLACK + joinMessageText2);
+                    }else{
+                        e.setJoinMessage(ChatColor.BLACK + "" + ChatColor.YELLOW + ChatColor.BOLD + p.getDisplayName() + ", " + ChatColor.BLACK + joinMessageTextNew1);
+                    }
+                }else if (defaultJoinMessageColour == "white") {
+                    if (p.hasPlayedBefore()){
+                        e.setJoinMessage(ChatColor.WHITE + joinMessageText1 + ChatColor.YELLOW + p.getDisplayName() + ChatColor.WHITE + joinMessageText2);
+                    }else{
+                        e.setJoinMessage(ChatColor.WHITE + "" + ChatColor.YELLOW + ChatColor.BOLD + p.getDisplayName() + ", " + ChatColor.WHITE + joinMessageTextNew1);
+                    }
+                }else if (defaultJoinMessageColour == "default") {
+                    if (p.hasPlayedBefore()){
+                        e.setJoinMessage(ChatColor.GREEN + joinMessageText1 + ChatColor.YELLOW + p.getDisplayName() + ChatColor.GREEN + joinMessageText2);
+                    }else{
+                        e.setJoinMessage(ChatColor.BLUE + "" + ChatColor.BOLD + p.getDisplayName() + ", " + ChatColor.BLUE + joinMessageTextNew1);
+                    }
+                }else{
+                    if (p.hasPlayedBefore()){
+                        e.setJoinMessage(ChatColor.GREEN + joinMessageText1 + ChatColor.YELLOW + p.getDisplayName() + ChatColor.GREEN + joinMessageText2);
+                    }else{
+                        e.setJoinMessage(ChatColor.BLUE + "" + ChatColor.BOLD + p.getDisplayName() + ", " + ChatColor.BLUE + joinMessageTextNew1);
+                    }
+                }
             }
         }else if(joinMessageChangeHasBeenActivated=true){
             // thing that changes colour of chat on your join messages
@@ -412,67 +482,67 @@ public final class joinLeaveMessagesMain extends JavaPlugin implements Listener 
                     // if statement to send a different join/leave message if you have never played in "" server
                     e.setJoinMessage(ChatColor.RED + joinMessageText1 + ChatColor.YELLOW + p.getDisplayName() + ChatColor.RED + joinMessageText2);
                 }else{
-                    e.setJoinMessage(ChatColor.RED + "" + ChatColor.YELLOW + ChatColor.BOLD + p.getDisplayName() + ", " + ChatColor.RED + "welcome to the best server ever. I hope you like it.");
+                    e.setJoinMessage(ChatColor.RED + "" + ChatColor.YELLOW + ChatColor.BOLD + p.getDisplayName() + ", " + ChatColor.RED + joinMessageTextNew1);
                 }
             }else if (ColorChatJoin == "yellow") {
                 if (p.hasPlayedBefore()){
                     e.setJoinMessage(ChatColor.YELLOW + joinMessageText1 + ChatColor.YELLOW + p.getDisplayName() + ChatColor.YELLOW + joinMessageText2);
                 }else{
-                    e.setJoinMessage(ChatColor.YELLOW + "" + ChatColor.YELLOW + ChatColor.BOLD + p.getDisplayName() + ", " + ChatColor.YELLOW + "welcome to the best server ever. I hope you like it.");
+                    e.setJoinMessage(ChatColor.YELLOW + "" + ChatColor.YELLOW + ChatColor.BOLD + p.getDisplayName() + ", " + ChatColor.YELLOW + joinMessageTextNew1);
                 }
             }else if (ColorChatJoin == "green") {
                 if (p.hasPlayedBefore()){
                     e.setJoinMessage(ChatColor.GREEN + joinMessageText1 + ChatColor.YELLOW + p.getDisplayName() + ChatColor.GREEN + joinMessageText2);
                 }else{
-                    e.setJoinMessage(ChatColor.GREEN + "" + ChatColor.YELLOW + ChatColor.BOLD + p.getDisplayName() + ", " + ChatColor.GREEN + "welcome to the best server ever. I hope you like it.");
+                    e.setJoinMessage(ChatColor.GREEN + "" + ChatColor.YELLOW + ChatColor.BOLD + p.getDisplayName() + ", " + ChatColor.GREEN + joinMessageTextNew1);
                 }
             }else if (ColorChatJoin == "darkGreen") {
                 if (p.hasPlayedBefore()){
                     e.setJoinMessage(ChatColor.DARK_GREEN + joinMessageText1 + ChatColor.YELLOW + p.getDisplayName() + ChatColor.DARK_GREEN + joinMessageText2);
                 }else{
-                    e.setJoinMessage(ChatColor.DARK_GREEN + "" + ChatColor.YELLOW + ChatColor.BOLD + p.getDisplayName() + ", " + ChatColor.DARK_GREEN + "welcome to the best server ever. I hope you like it.");
+                    e.setJoinMessage(ChatColor.DARK_GREEN + "" + ChatColor.YELLOW + ChatColor.BOLD + p.getDisplayName() + ", " + ChatColor.DARK_GREEN + joinMessageTextNew1);
                 }
             }else if (ColorChatJoin == "blue") {
                 if (p.hasPlayedBefore()){
                     e.setJoinMessage(ChatColor.BLUE + joinMessageText1 + ChatColor.YELLOW + p.getDisplayName() + ChatColor.BLUE + joinMessageText2);
                 }else{
-                    e.setJoinMessage(ChatColor.BLUE + "" + ChatColor.YELLOW + ChatColor.BOLD + p.getDisplayName() + ", " + ChatColor.BLUE + "welcome to the best server ever. I hope you like it.");
+                    e.setJoinMessage(ChatColor.BLUE + "" + ChatColor.YELLOW + ChatColor.BOLD + p.getDisplayName() + ", " + ChatColor.BLUE + joinMessageTextNew1);
                 }
             }else if (ColorChatJoin == "purple") {
                 if (p.hasPlayedBefore()){
                     e.setJoinMessage(ChatColor.LIGHT_PURPLE + joinMessageText1 + ChatColor.YELLOW + p.getDisplayName() + ChatColor.LIGHT_PURPLE + joinMessageText2);
                 }else{
-                    e.setJoinMessage(ChatColor.LIGHT_PURPLE + "" + ChatColor.YELLOW + ChatColor.BOLD + p.getDisplayName() + ", " + ChatColor.LIGHT_PURPLE + "welcome to the best server ever. I hope you like it.");
+                    e.setJoinMessage(ChatColor.LIGHT_PURPLE + "" + ChatColor.YELLOW + ChatColor.BOLD + p.getDisplayName() + ", " + ChatColor.LIGHT_PURPLE + joinMessageTextNew1);
                 }
             }else if (ColorChatJoin == "darkPurple") {
                 if (p.hasPlayedBefore()){
                     e.setJoinMessage(ChatColor.DARK_PURPLE + joinMessageText1 + ChatColor.YELLOW + p.getDisplayName() + ChatColor.DARK_PURPLE + joinMessageText2);
                 }else{
-                    e.setJoinMessage(ChatColor.DARK_PURPLE + "" + ChatColor.YELLOW + ChatColor.BOLD + p.getDisplayName() + ", " + ChatColor.DARK_PURPLE + "welcome to the best server ever. I hope you like it.");
+                    e.setJoinMessage(ChatColor.DARK_PURPLE + "" + ChatColor.YELLOW + ChatColor.BOLD + p.getDisplayName() + ", " + ChatColor.DARK_PURPLE + joinMessageTextNew1);
                 }
             }else if (ColorChatJoin == "black") {
                 if (p.hasPlayedBefore()){
                     e.setJoinMessage(ChatColor.BLACK + joinMessageText1 + ChatColor.YELLOW + p.getDisplayName() + ChatColor.BLACK + joinMessageText2);
                 }else{
-                    e.setJoinMessage(ChatColor.BLACK + "" + ChatColor.YELLOW + ChatColor.BOLD + p.getDisplayName() + ", " + ChatColor.BLACK + "welcome to the best server ever. I hope you like it.");
+                    e.setJoinMessage(ChatColor.BLACK + "" + ChatColor.YELLOW + ChatColor.BOLD + p.getDisplayName() + ", " + ChatColor.BLACK + joinMessageTextNew1);
                 }
             }else if (ColorChatJoin == "white") {
                 if (p.hasPlayedBefore()){
                     e.setJoinMessage(ChatColor.WHITE + joinMessageText1 + ChatColor.YELLOW + p.getDisplayName() + ChatColor.WHITE + joinMessageText2);
                 }else{
-                    e.setJoinMessage(ChatColor.WHITE + "" + ChatColor.YELLOW + ChatColor.BOLD + p.getDisplayName() + ", " + ChatColor.WHITE + "welcome to the best server ever. I hope you like it.");
+                    e.setJoinMessage(ChatColor.WHITE + "" + ChatColor.YELLOW + ChatColor.BOLD + p.getDisplayName() + ", " + ChatColor.WHITE + joinMessageTextNew1);
                 }
             }else if (ColorChatJoin == "default") {
                 if (p.hasPlayedBefore()){
                     e.setJoinMessage(ChatColor.GREEN + joinMessageText1 + ChatColor.YELLOW + p.getDisplayName() + ChatColor.GREEN + joinMessageText2);
                 }else{
-                    e.setJoinMessage(ChatColor.BLUE + "" + ChatColor.BOLD + p.getDisplayName() + ", " + ChatColor.BLUE + "welcome to the best server ever. I hope you like it.");
+                    e.setJoinMessage(ChatColor.BLUE + "" + ChatColor.BOLD + p.getDisplayName() + ", " + ChatColor.BLUE + joinMessageTextNew1);
                 }
             }else{
                 if (p.hasPlayedBefore()){
                     e.setJoinMessage(ChatColor.GREEN + joinMessageText1 + ChatColor.YELLOW + p.getDisplayName() + ChatColor.GREEN + joinMessageText2);
                 }else{
-                    e.setJoinMessage(ChatColor.BLUE + "" + ChatColor.BOLD + p.getDisplayName() + ", " + ChatColor.BLUE + "welcome to the best server ever. I hope you like it.");
+                    e.setJoinMessage(ChatColor.BLUE + "" + ChatColor.BOLD + p.getDisplayName() + ", " + ChatColor.BLUE + joinMessageTextNew1);
                 }
             }
         }
@@ -484,10 +554,34 @@ public final class joinLeaveMessagesMain extends JavaPlugin implements Listener 
         // thing that registers player events
         Player p = e.getPlayer();
         String leaveMessageText = getConfig().getString("leaveMessageText1");
+        String defaultLeaveMessageColour = getConfig().getString("defaultleaveMessageColour");
 
         if (leaveMessageChangeHasBeenActivated=false){
             // if command was never used before to simplify command
-            e.setQuitMessage(ChatColor.YELLOW + p.getDisplayName() + ChatColor.RED + leaveMessageText);
+            if (defaultLeaveMessageColour == "red") {
+                // thing that changes the color of chat for your leave message
+                e.setQuitMessage(ChatColor.YELLOW + p.getDisplayName() + ChatColor.RED + leaveMessageText);
+            }else if (defaultLeaveMessageColour == "yellow") {
+                e.setQuitMessage(ChatColor.YELLOW + p.getDisplayName() + ChatColor.YELLOW + leaveMessageText);
+            }else if (defaultLeaveMessageColour == "green") {
+                e.setQuitMessage(ChatColor.YELLOW + p.getDisplayName() + ChatColor.GREEN + leaveMessageText);
+            }else if (defaultLeaveMessageColour == "darkGreen") {
+                e.setQuitMessage(ChatColor.YELLOW + p.getDisplayName() + ChatColor.DARK_GREEN + leaveMessageText);
+            }else if (defaultLeaveMessageColour == "blue") {
+                e.setQuitMessage(ChatColor.YELLOW + p.getDisplayName() + ChatColor.BLUE + leaveMessageText);
+            }else if (defaultLeaveMessageColour == "purple") {
+                e.setQuitMessage(ChatColor.YELLOW + p.getDisplayName() + ChatColor.LIGHT_PURPLE + leaveMessageText);
+            }else if (defaultLeaveMessageColour == "darkPurple") {
+                e.setQuitMessage(ChatColor.YELLOW + p.getDisplayName() + ChatColor.DARK_PURPLE + leaveMessageText);
+            }else if (defaultLeaveMessageColour == "black") {
+                e.setQuitMessage(ChatColor.YELLOW + p.getDisplayName() + ChatColor.BLACK + leaveMessageText);
+            }else if (defaultLeaveMessageColour == "white") {
+                e.setQuitMessage(ChatColor.YELLOW + p.getDisplayName() + ChatColor.WHITE + leaveMessageText);
+            }else if (defaultLeaveMessageColour == "default") {
+                e.setQuitMessage(ChatColor.YELLOW + p.getDisplayName() + ChatColor.RED + leaveMessageText);
+            }else{
+                e.setQuitMessage(ChatColor.YELLOW + p.getDisplayName() + ChatColor.RED + leaveMessageText);
+            }
         }else if(leaveMessageChangeHasBeenActivated=true){
             if (ColorChatLeave == "red") {
                 // thing that changes the color of chat for your leave message
